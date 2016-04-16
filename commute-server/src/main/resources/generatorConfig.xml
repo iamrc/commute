@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC
+        "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+
+    <!-- Class Driver Path -->
+    <classPathEntry location="/Users/Dash/.m2/repository/mysql/mysql-connector-java/5.1.36/mysql-connector-java-5.1.36.jar"/>
+
+    <context id="context" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <!-- This property is used to specify whether MBG will include the generation timestamp in the generated comments -->
+            <property name="suppressDate" value="true"/>
+            <!-- This property is used to specify whether MBG will include any coments in the generated code -->
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/commute-student" userId="root" password="root"/>
+
+        <javaTypeResolver>
+            <!-- This property is used to specify whether MyBatis Generator should force the use of java.math.BigDecimal
+      for DECIMAL and NUMERIC fields, rather than substituting integral types when possible -->
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="com.xjt.doubi.bean" targetProject="src/main/java">
+            <!-- This property is used to select whether MyBatis Generator will generate different Java packages for
+      the objects based on the catalog and schema of the introspected table -->
+            <property name="enableSubPackages" value="true"/>
+            <!-- This property is used to select whether MyBatis Generator adds code to trim the white space from character fields returned from the database -->
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="mapping" targetProject="src/main/resources">
+            <!-- This property is used to select whether MyBatis Generator will generate different Java packages for
+      the objects based on the catalog and schema of the introspected table -->
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <javaClientGenerator targetPackage="com.xjt.doubi.dao" targetProject="src/main/java" type="XMLMAPPER">
+            <!-- This property is used to select whether MyBatis Generator will generate different Java packages for
+      the objects based on the catalog and schema of the introspected table -->
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <table tableName="tbl_student" domainObjectName="Student" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+               enableUpdateByExample="false"/>
+    </context>
+</generatorConfiguration>

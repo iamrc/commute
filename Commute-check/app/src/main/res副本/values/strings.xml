@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">学生考勤</string>
+    <string name="check">打卡</string>
+    <string name="signUp">注册</string>
+    <string name="IP">IP地址:</string>
+</resources>
